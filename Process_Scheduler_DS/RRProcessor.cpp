@@ -2,6 +2,8 @@
 
 RRProcessor::RRProcessor(int numProcesses):Processor(numProcesses)
 {
+	
+	time_slice = 0;
 }
 int RRProcessor::getidealtime()
 {

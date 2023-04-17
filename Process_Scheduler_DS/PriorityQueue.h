@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 template <typename T>
 class PriorityQueue {
 private:
@@ -37,7 +40,7 @@ public:
     }
     T dequeue() {
         if (empty()) {
-            throw std::runtime_error("Priority queue is empty");
+           
         }
         Node* temp = head;
         T data = temp->data;
@@ -45,5 +48,16 @@ public:
         delete temp;
         return data;
     }
+
+    T print() const {
+        Node* curr = head;
+        while (curr != nullptr) {
+            cout << curr->data << " ";
+            curr = curr->next;
+        }
+        cout <<endl;
+        return (curr == nullptr) ? T() : curr->data;
+    }
 };
+
 

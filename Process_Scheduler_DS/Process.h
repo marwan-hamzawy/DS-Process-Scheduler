@@ -34,7 +34,7 @@ public:
     int getPid() const;
     int getArrivalTime() const;
     int getNumIoOps() const;
-    int getIoIndex() const;
+    int getIoIndex() const;     
     int getIoTime(int index) const;
     int getIoDuration(int index) const;  
     

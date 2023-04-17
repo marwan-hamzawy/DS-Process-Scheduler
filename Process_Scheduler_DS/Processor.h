@@ -11,7 +11,7 @@ private:
 public:
 	int idealtime;
 	int busytime;
-	int TimeSlice; //for round robin
+	
 	Process* Run;
 	Processor(int numProcesses);
 	virtual void ScheduleAlgo(Process* processes) = 0;

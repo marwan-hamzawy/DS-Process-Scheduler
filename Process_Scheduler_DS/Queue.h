@@ -57,7 +57,7 @@ public:
 
 	bool IsEmpty()
 	{
-		if (Front == NULL && Rear == NULL)
+		if (Front == nullptr && Rear == nullptr)
 		{
 			return true;
 		}
@@ -89,12 +89,12 @@ public:
 	{
 		if (IsEmpty())
 		{
-			cout << "The Queue is Empty";
+			//cout << "The Queue is Empty";
 		}
 		else if (Front == Rear)
 		{
 			delete Front;
-			Front = Rear = NULL;
+			Front = Rear = nullptr;
 		}
 		else
 		{
@@ -106,12 +106,12 @@ public:
 	void Display()
 	{
 		Node1<T>* temp = Front;
-		while (temp != NULL)
+		while (temp != nullptr)
 		{
-			cout << temp->getItem() << " ";
+			//cout << temp->getItem() << " ";
 			temp = temp->getNext();
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	T FRONT() {
 		if (IsEmpty())
