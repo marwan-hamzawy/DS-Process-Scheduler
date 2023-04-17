@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 template<typename T, int N>
 class CircularQueue {
 private:
@@ -42,5 +45,20 @@ public:
 
     const T& frontValue() const {
         return arr[front];
+    }
+
+    T print() const {
+        if (isEmpty()) {
+            //std::cout << "Circular Queue is empty.\n";
+            return 0;
+        }
+        //std::cout << "Circular Queue:\n";
+        int i = front;
+        do {
+            cout << arr[i] << " ";
+            i = (i + 1) % N;
+        } while (i != rear);
+        return arr[i];
+        //std::cout << "\n";
     }
 };
