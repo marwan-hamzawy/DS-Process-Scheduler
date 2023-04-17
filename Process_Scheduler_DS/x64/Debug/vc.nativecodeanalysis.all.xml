@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\moham\source\repos\moghaith\Process-Scheduler-DS\Process_Scheduler_DS\</FILEPATH>
+      <FILENAME>Process.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Process::CT' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Process::{ctor}</FUNCTION>
+    <DECORATED>??0Process@@QEAA@HHHHPEAH0@Z</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Process::CT</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

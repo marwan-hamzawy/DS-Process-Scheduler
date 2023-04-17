@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32217.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/moham/source/repos/moghaith/process-scheduler-ds/process_scheduler_ds/processor.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "10572af94c7d91ea7f763bbbed6d6cc765f946ab832afb012880069db6afa1f0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/moham/source/repos/moghaith/process-scheduler-ds/process_scheduler_ds/processor.h"
+          },
+          "hashes": {
+            "sha-256": "4e43f3292c7be60de5e53751b1ce5efab19e6f02adb8011db9e75efc712e2665"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/moham/source/repos/moghaith/process-scheduler-ds/process_scheduler_ds/process.h"
+          },
+          "hashes": {
+            "sha-256": "4a252560104a4686a44c9c9f3fe5f0ad800e7bb3ac27dbeb25c422a1156bedb3"
+          }
+        }
+      ]
+    }
+  ]
+}

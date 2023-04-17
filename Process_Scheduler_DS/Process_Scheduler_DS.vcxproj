@@ -127,16 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CircularQueue.cpp" />
+    <ClCompile Include="FCFSProcessor.cpp" />
+    <ClCompile Include="PriorityQueue.cpp" />
     <ClCompile Include="Process.cpp" />
     <ClCompile Include="Processor.cpp" />
     <ClCompile Include="Process_Scheduler_DS.cpp" />
+    <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="RRProcessor.cpp" />
     <ClCompile Include="Scheduler.cpp" />
+    <ClCompile Include="SJFProcessor.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CircularQueue.h" />
+    <ClInclude Include="FCFSProcessor.h" />
+    <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Process.h" />
     <ClInclude Include="Processor.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="RRProcessor.h" />
     <ClInclude Include="Scheduler.h" />
+    <ClInclude Include="SJFProcessor.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,9 @@
+﻿  Process.cpp
+  Processor.cpp
+  Process_Scheduler_DS.cpp
+  Scheduler.cpp
+  UI.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
+  Process_Scheduler_DS.vcxproj -> C:\Users\moham\Source\Repos\moghaith\Process-Scheduler-DS\x64\Debug\Process_Scheduler_DS.exe
+C:\Users\moham\source\repos\moghaith\Process-Scheduler-DS\Process_Scheduler_DS\Process.cpp(3): warning C26495: Variable 'Process::CT' is uninitialized. Always initialize a member variable (type.6).

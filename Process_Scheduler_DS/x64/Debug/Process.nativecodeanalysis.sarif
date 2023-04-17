@@ -1,0 +1,448 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::CT' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::CT"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::turnedroundtime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::turnedroundtime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::waitingtime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::waitingtime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::priority' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::priority"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::timeRemaining' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::timeRemaining"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::STL' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::STL"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::probFork' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::probFork"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::RTF' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::RTF"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::MaxW' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::MaxW"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::NF' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::NF"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::NS' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::NS"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::NR' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::NR"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Process::TimeSlice' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 10,
+                  "endLine": 3,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Process::{ctor}",
+                  "decoratedName": "??0Process@@QEAA@HHHHPEAH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Process::TimeSlice"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32217.1",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/moham/source/repos/moghaith/Process-Scheduler-DS/Process_Scheduler_DS/Process.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "1c6c0cd847fb9a1fe8d6d226d25ad7767fe681cab8d48cd6a1a6b8c02965e445"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/moham/source/repos/moghaith/process-scheduler-ds/process_scheduler_ds/process.h"
+          },
+          "hashes": {
+            "sha-256": "4a252560104a4686a44c9c9f3fe5f0ad800e7bb3ac27dbeb25c422a1156bedb3"
+          }
+        }
+      ]
+    }
+  ]
+}
