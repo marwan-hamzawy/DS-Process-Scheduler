@@ -18,22 +18,22 @@ int Processor::getCurrentTime() const
 	
 }
 
-int Processor::getidealtime()
-{
-	return idealtime;
-}
-
-int Processor::getbusytime()
-{
-	return busytime;
-}
-
-void Processor::setidealtime(int ideal)
-{
-	idealtime = ideal;
-}
-
-void Processor::setbusytime(int busy)
-{
-	busytime = busy;
-}
+//int Processor::getidealtime()
+//{
+//	return idealtime;
+//}
+//
+//int Processor::getbusytime()
+//{
+//	return busytime;
+//}
+//
+//void Processor::setidealtime(int ideal)
+//{
+//	idealtime = ideal;
+//}
+//
+//void Processor::setbusytime(int busy)
+//{
+//	busytime = busy;
+//}

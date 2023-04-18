@@ -13,6 +13,7 @@ public:
 	virtual void AddToRDY(Process* p);
 	virtual void RemoveProcess();
 	virtual void ScheduleAlgo(Process* p);
+	virtual void printStats() override;
 	virtual int getidealtime() ;
 	virtual int getbusytime() ;
 	virtual void setidealtime(int ideal) ;

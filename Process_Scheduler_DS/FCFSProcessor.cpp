@@ -35,6 +35,9 @@ void FCFSProcessor::setbusytime(int busy)
 	busytime = busy;
 }
 
+void FCFSProcessor::printStats() {}
+	
+
 
 void FCFSProcessor::ScheduleAlgo(Process* p)
 {
