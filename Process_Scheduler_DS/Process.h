@@ -1,4 +1,7 @@
 #pragma once
+#include<iostream>
+using namespace std;
+
 class Process
 {
 private:
@@ -36,7 +39,8 @@ public:
     int getNumIoOps() const;
     int getIoIndex() const;     
     int getIoTime(int index) const;
-    int getIoDuration(int index) const;  
+    int getIoDuration(int index) const; 
+    friend ostream& operator << (ostream& COUT, Process* p);
     
     Process* next; // pointer to the next process in the ready queue
     bool allIoOpsCompleted() const;// function to check if process has completed all IO operations

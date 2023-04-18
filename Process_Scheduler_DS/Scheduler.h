@@ -45,10 +45,7 @@ using namespace std;
 //	//}
 //};
 
-ostream& operator << (ostream& COUT, Scheduler& SS) {
-	COUT << SS.printprocess();
-	return COUT;
-}
+
 
 class Scheduler {
 public:
@@ -57,36 +54,38 @@ public:
 	FCFSProcessor* FCFSptr = new FCFSProcessor[5];
 	Scheduler() {
 		Process* PSESSptr;
-		
+		int y = 1;
 				for (int j = 0; j < 6; j++) {
 					for (int i = 0; i < 5; i++)
 					{
 						//int x = 4;
-						PSESSptr = new Process(i*j, i*j + 5, i*j + 35, i*j + 6, &i + 12, &i + 88);
+						
+						PSESSptr = new Process(y, i*j + 5, i*j + 35, i*j + 6, &i + 12, &i + 88);
 						FCFSptr[i].AddToRDY(PSESSptr);
+						y++;
 					}
 				}
 
 	}
+
 	
 	void Scheduler_Running() {
 		while (TRM.Size() != 20)
 		{
 			Process* PSESSptr = nullptr;
-			for (int i = 0; i < 6; i++) {
-				FCFSptr[i].UpdateRandomNum(PSESSptr);
-				if (PSESSptr == 0) {
+			for (int i = 0; i < 5; i++) {
+				int x = FCFSptr[i].UpdateRandomNum(PSESSptr);
+				
+				if (PSESSptr) {
+					
+					if (x == 1) {
+						BLK.EnQueue(PSESSptr);
+					}
 					TRM.EnQueue(PSESSptr);
 				}
-				else if(FCFSptr[i].UpdateRandomNum(PSESSptr) == 1){
-					
-						BLK.EnQueue(PSESSptr);
-					
-				}
-				else if (FCFSptr[i].UpdateRandomNum(PSESSptr) == 2) {
-					PSESSptr = FCFSptr->getRun();
-				}
+				PSESSptr = nullptr;
 			}
+			printprocess();
 		}
 	}
 	
@@ -101,13 +100,31 @@ public:
 		cout << "For Silent Mode press ->>>> 3 " << endl;
 		cin >> mode;
 		if (mode == 1) {
-			cout << "----------- RDY Processes ------------" << endl;
-
-			cout << "----------- BLK Processes ------------" << endl;
-			cout << "----------- RUN Processes ------------" << endl;
-			cout << "----------- TRM Processes ------------" << endl;
+			cout << "\n----------- RDY Processes ------------\n" << endl;
+			
+			for (int i = 0; i < 5; i++) {
+				FCFSptr[i].PrintProcessor();
+				cout << "\n";
+			}
+			
+			cout << "\n----------- BLK Processes ------------\n" << endl;
+			
+			BLK.Display();
+			
+			cout << "\n----------- RUN Processes ------------\n" << endl;
+			
+			for (int i = 0; i < 5; i++) {
+				
+				if (FCFSptr[i].getRun()) {
+					cout << FCFSptr[i].getRun();
+				}
+			}
+			cout << "\n----------- TRM Processes ------------\n" << endl;
+			
+			TRM.Display();
+			
 			cout << "PRESS ANY KEY TO MOVE TO NEXT STEP !" << endl;
-			cin.ignore();
+			cin.get();
 		}
 	
 	}

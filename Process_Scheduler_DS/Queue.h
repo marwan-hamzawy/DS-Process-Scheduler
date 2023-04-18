@@ -88,7 +88,7 @@ public:
 
 	}
 
-	void DeQueue()
+	T DeQueue()
 	{
 		if (IsEmpty())
 		{
@@ -96,16 +96,20 @@ public:
 		}
 		else if (Front == Rear)
 		{
+			Node1<T>* ff = Front;
 			delete Front;
 			Front = Rear = nullptr;
-			counter--; // decrement counter
+			Counter--; // decrement counter
+			return ff->getItem();
 		}
 		else
 		{
 			Node1<T>* delptr = Front;
 			Front = Front->getNext();
+			Node1<T>* ff = Front;
 			delete delptr;
-			counter--; // decrement counter
+			Counter--; // decrement counter
+			return ff->getItem();
 		}
 	}
 	void Display()
@@ -113,11 +117,13 @@ public:
 		Node1<T>* temp = Front;
 		while (temp != nullptr)
 		{
-			//cout << temp->getItem() << " ";
+			cout << temp->getItem() << " ";
 			temp = temp->getNext();
 		}
 		//cout << endl;
 	}
+	
+	
 	T FRONT() {
 		if (IsEmpty())
 		{
@@ -128,6 +134,6 @@ public:
 		}
 	}
 	int Size() { // new function to return number of elements in queue
-		return counter;
+		return Counter;
 	}
 };

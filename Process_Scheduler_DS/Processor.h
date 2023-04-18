@@ -26,6 +26,7 @@ public:
 	virtual void setidealtime(int ideal)=0;
 	virtual void setbusytime(int busy)=0;
 	virtual int UpdateRandomNum(Process* p) =0;
+	virtual void PrintProcessor() = 0;
 	Process* getRun() const;
 };
 

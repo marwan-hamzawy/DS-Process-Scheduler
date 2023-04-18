@@ -19,5 +19,7 @@ public:
 	 void setidealtime(int ideal) override;
 	 void setbusytime(int busy) override;
 	 int UpdateRandomNum(Process* p) override;
+	 void PrintProcessor() override;
+
 };
 

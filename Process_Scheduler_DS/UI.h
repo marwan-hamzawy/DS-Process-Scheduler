@@ -11,7 +11,9 @@ public:
 
 	void PrintMode() {
 		Scheduler SS1;
-		cout << SS1.printprocess();
+		SS1.printprocess();
+		SS1.Scheduler_Running();
+		
 	}
 	
 };

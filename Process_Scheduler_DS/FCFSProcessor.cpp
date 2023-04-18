@@ -44,8 +44,20 @@ void FCFSProcessor::setbusytime(int busy)
 //void FCFSProcessor::printStats() {}
 	
 int FCFSProcessor::UpdateRandomNum(Process* p) {
-	int randomNumber = rand() % 3;      // generate a random integer between 0 and 2
+	if (!Run) {
+		p = RDY.DeQueue();
+		//RDY.DeQueue()
+	}
+	int randomNumber = rand() % 3;   // generate a random integer between 0 and 2
+	if (randomNumber == 0) {
+
+	}
+	else if (randomNumber == 1 || randomNumber == 2) {
+		Run = nullptr;
+	}
+
 	return randomNumber;                // return the random number
+
 }
 
 void FCFSProcessor::ScheduleAlgo(Process* p)
@@ -64,3 +76,9 @@ void FCFSProcessor::ScheduleAlgo(Process* p)
 	}
 
 }
+
+void FCFSProcessor::PrintProcessor() {
+	RDY.Display();
+ 
+}
+
