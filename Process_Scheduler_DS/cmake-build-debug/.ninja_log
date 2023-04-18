@@ -1,0 +1,11 @@
+# ninja log v5
+1	364	1681850113896750320	CMakeFiles/Process_Scheduler_DS.dir/UI.cpp.o	9160e46396914df0
+1	370	1681850113896765527	CMakeFiles/Process_Scheduler_DS.dir/CircularQueue.cpp.o	a9d2ae104e860b7d
+0	434	1681850113990581028	CMakeFiles/Process_Scheduler_DS.dir/RRProcessor.cpp.o	b4dc58757c66ce19
+2	435	1681850113992013470	CMakeFiles/Process_Scheduler_DS.dir/FCFSProcessor.cpp.o	af33fe3e9e77e914
+371	454	1681850114011902259	CMakeFiles/Process_Scheduler_DS.dir/Process.cpp.o	7ab00e7a42900e45
+436	491	1681850114050198186	CMakeFiles/Process_Scheduler_DS.dir/Queue.cpp.o	160715bb96cbcf80
+454	514	1681850114072980359	CMakeFiles/Process_Scheduler_DS.dir/Processor.cpp.o	5cb7da7aacfd3dbf
+369	1427	1681850114981687080	CMakeFiles/Process_Scheduler_DS.dir/PriorityQueue.cpp.o	3499a0132818ec6c
+1	1512	1681850115064721261	CMakeFiles/Process_Scheduler_DS.dir/SJFProcessor.cpp.o	25bee0463283ee0
+434	1585	1681850115140658601	CMakeFiles/Process_Scheduler_DS.dir/Process_Scheduler_DS.cpp.o	22959ba370038733
