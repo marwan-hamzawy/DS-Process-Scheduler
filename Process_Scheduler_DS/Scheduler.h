@@ -4,7 +4,6 @@
 #include "PriorityQueue.h"
 #include "FCFSProcessor.h"
 #include "RRProcessor.h"
-#include "SJFProcessor.h"
 #include "Process.h"
 #include <iostream>
 #include <fstream>

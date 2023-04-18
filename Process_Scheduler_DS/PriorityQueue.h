@@ -40,7 +40,7 @@ public:
     }
     T dequeue() {
         if (empty()) {
-           
+
         }
         Node* temp = head;
         T data = temp->data;
