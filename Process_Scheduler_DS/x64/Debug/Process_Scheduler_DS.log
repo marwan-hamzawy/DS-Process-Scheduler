@@ -1,2 +1,14 @@
-﻿  Process_Scheduler_DS.cpp
-  Process_Scheduler_DS.vcxproj -> F:\CIE SPRG 2023\ALAA Ds Proj\Process-Scheduler-DSss\x64\Debug\Process_Scheduler_DS.exe
+﻿  CircularQueue.cpp
+  FCFSProcessor.cpp
+  PriorityQueue.cpp
+  Process.cpp
+  Processor.cpp
+C:\Users\moham\source\repos\DS-Process-Scheduler\Process_Scheduler_DS\Processor.cpp(17,10): warning C4244: 'return': conversion from 'const double' to 'int', possible loss of data
+  Process_Scheduler_DS.cpp
+  Queue.cpp
+  RRProcessor.cpp
+  Scheduler.cpp
+  SJFProcessor.cpp
+  UI.cpp
+  Generating Code...
+  Process_Scheduler_DS.vcxproj -> C:\Users\moham\Source\Repos\DS-Process-Scheduler\x64\Debug\Process_Scheduler_DS.exe

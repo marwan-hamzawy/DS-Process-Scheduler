@@ -36,7 +36,11 @@ void RRProcessor::RemoveProcess()
 
 void RRProcessor::ScheduleAlgo(Process* p)
 {
-	Process* x = RDY.dequeue();
-	
-
+	if (RDY.isEmpty()) {
+		return;
+	}
+	else
+	{
+		Run = RDY.dequeue();
+	}
 }

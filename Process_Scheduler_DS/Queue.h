@@ -1,3 +1,5 @@
+#include<iostream>
+using namespace std;
 #pragma once
 template<typename T>
 class Node1
@@ -89,7 +91,7 @@ public:
 	{
 		if (IsEmpty())
 		{
-			//cout << "The Queue is Empty";
+			cout << "The Queue is Empty";
 		}
 		else if (Front == Rear)
 		{
@@ -108,10 +110,10 @@ public:
 		Node1<T>* temp = Front;
 		while (temp != nullptr)
 		{
-			//cout << temp->getItem() << " ";
+			cout << temp->getItem() << " ";
 			temp = temp->getNext();
 		}
-		//cout << endl;
+		cout << endl;
 	}
 	T FRONT() {
 		if (IsEmpty())

@@ -22,6 +22,10 @@ void SJFProcessor::setbusytime(int busy)
 {
 	busytime = busy;
 }
+int SJFProcessor::getCurrentTime() const
+{
+    return current_time;
+}
 void SJFProcessor::AddToRDY(Process* p)
 {
 	RDY.enqueue(p,p->KillTime);
@@ -34,4 +38,15 @@ void SJFProcessor::RemoveProcess()
 
 void SJFProcessor::ScheduleAlgo(Process* p)
 {
-}
+    // Check if RDY queue is empty
+    if (RDY.empty()) {
+        return;
+    }
+	else
+	{
+		Run = RDY.dequeue();
+	}
+
+ 
+ }
+

@@ -12,7 +12,7 @@ private:
     int turnedroundtime;
     int waitingtime;
     
-    int priority; // priority level
+   
     int timeRemaining; // remaining CPU time
     int STL; //Steal time
     int probFork; //Fork probability  
@@ -21,7 +21,7 @@ private:
 	int NF; //number of FCFS processors
 	int NS; //number of SJF processors
 	int NR; //number of RR processors
-	int TimeSlice; //Time slice for RR
+	
 
    
     
