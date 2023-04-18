@@ -18,6 +18,11 @@ int Processor::getCurrentTime() const
 	
 }
 
+Process* Processor :: getRun() const
+{
+	return Run;
+}
+
 //int Processor::getidealtime()
 //{
 //	return idealtime;

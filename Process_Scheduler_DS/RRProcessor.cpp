@@ -34,6 +34,8 @@ void RRProcessor::RemoveProcess()
 	RDY.dequeue();
 }
 
+int RRProcessor::UpdateRandomNum(Process* p) {}
+
 void RRProcessor::ScheduleAlgo(Process* p)
 {
 	Process* x = RDY.dequeue();

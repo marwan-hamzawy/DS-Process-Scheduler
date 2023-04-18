@@ -17,6 +17,7 @@ public:
 	virtual int getbusytime();
 	virtual void setidealtime(int ideal);
 	virtual void setbusytime(int busy);
+	int UpdateRandomNum(Process* p) override;
 
 };
 

@@ -45,6 +45,7 @@ class Queue
 private:
 	Node1<T>* Front;
 	Node1<T>* Rear;
+	int Counter;		// counter variable to keep track of number of elements in queue
 public:
 
 
@@ -52,6 +53,7 @@ public:
 	{
 		Front = nullptr;
 		Rear = nullptr;
+		Counter = 0;
 	}
 
 
@@ -82,6 +84,7 @@ public:
 			Rear->setNext(newNode1);
 			Rear = newNode1;
 		}
+		Counter++;
 
 	}
 
@@ -95,12 +98,14 @@ public:
 		{
 			delete Front;
 			Front = Rear = nullptr;
+			counter--; // decrement counter
 		}
 		else
 		{
 			Node1<T>* delptr = Front;
 			Front = Front->getNext();
 			delete delptr;
+			counter--; // decrement counter
 		}
 	}
 	void Display()
@@ -121,5 +126,8 @@ public:
 		else {
 			return Front->getItem();
 		}
+	}
+	int Size() { // new function to return number of elements in queue
+		return counter;
 	}
 };

@@ -27,10 +27,12 @@ void SJFProcessor::AddToRDY(Process* p)
 	RDY.enqueue(p,p->KillTime);
 }
 
-void SJFProcessor::RemoveProcess()
+void SJFProcessor::RemoveProcess(Process* p)
 {
 	RDY.dequeue();
 }
+
+int SJFProcessor ::UpdateRandomNum(Process* p){}
 
 void SJFProcessor::ScheduleAlgo(Process* p)
 {

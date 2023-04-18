@@ -1,14 +1,20 @@
 #include "FCFSProcessor.h"
 #include"Queue.h"
+#include <cstdlib>
 
 FCFSProcessor::FCFSProcessor(int numProcesses) :Processor(numProcesses) {}
+
+FCFSProcessor::FCFSProcessor() :Processor(5) {
+
+}
+
 
 void FCFSProcessor::AddToRDY(Process* p)
 {
 	RDY.EnQueue(p);
 }
 
-void FCFSProcessor::RemoveProcess()
+void FCFSProcessor::RemoveProcess(Process* p)
 {
 	RDY.DeQueue();
 }
@@ -35,9 +41,12 @@ void FCFSProcessor::setbusytime(int busy)
 	busytime = busy;
 }
 
-void FCFSProcessor::printStats() {}
+//void FCFSProcessor::printStats() {}
 	
-
+int FCFSProcessor::UpdateRandomNum(Process* p) {
+	int randomNumber = rand() % 3;      // generate a random integer between 0 and 2
+	return randomNumber;                // return the random number
+}
 
 void FCFSProcessor::ScheduleAlgo(Process* p)
 {

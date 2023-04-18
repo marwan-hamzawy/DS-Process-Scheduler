@@ -8,12 +8,13 @@ private:
 public:
 
 	SJFProcessor(int numProcesses);
-	virtual void AddToRDY(Process* p);
-	virtual void RemoveProcess();
-	virtual void ScheduleAlgo(Process* p);
-	virtual int getidealtime();
-	virtual int getbusytime();
-	virtual void setidealtime(int ideal);
-	virtual void setbusytime(int busy);
+	 void AddToRDY(Process* p) override;
+	 void RemoveProcess(Process* p) override;
+	 void ScheduleAlgo(Process* p) override;
+	 int getidealtime() override;
+	 int getbusytime() override;
+	 void setidealtime(int ideal) override;
+	 void setbusytime(int busy) override;
+	int UpdateRandomNum(Process* p) override;
 };
 

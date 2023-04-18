@@ -3,16 +3,17 @@ using namespace std;
 #include "UI.h"
 #include"FCFSProcessor.h"
 #include"Process.h"
+#include"Scheduler.h"
 #include <conio.h>
 #include<list>
 
 void UI::PrintMode() {
-	FCFSProcessor p1;
-	FCFSProcessor p2;
-	list <FCFSProcessor> LList;
+	//FCFSProcessor p1;
+	//FCFSProcessor p2;
+	/*list <FCFSProcessor> LList;
 	LList.push_back(p1);
-	LList.push_back(p2);
-	int mode;
+	LList.push_back(p2);*/
+	/*int mode;
 	cout << "-------------*Process Scheduler*--------------" << endl;
 	cout << "For Interactive Mode press ->>>> 1 " << endl;
 	cout << "For Step-by-Step Mode press ->>>> 2 " << endl;
@@ -26,6 +27,8 @@ void UI::PrintMode() {
 		cout << "----------- TRM Processes ------------" << endl;
 		cout << "PRESS ANY KEY TO MOVE TO NEXT STEP !" << endl;
 		cin.ignore();
-	}
-
+	}*/
+	
+	/*Scheduler SS1;
+	cout << SS1.printprocess;*/
 }
