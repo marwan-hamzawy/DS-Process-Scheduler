@@ -32,7 +32,7 @@ void SJFProcessor::RemoveProcess(Process* p)
 	RDY.dequeue();
 }
 
-int SJFProcessor ::UpdateRandomNum(Process* p){
+int SJFProcessor ::UpdateRandomNum(Process*& p){
 	return 0;
 }
 

@@ -34,6 +34,12 @@ public:
 		return item;
 	} // end getItem
 
+	void getItem(T& temp) const
+	{
+		temp = item;
+		return;
+	} // end getItem
+
 	Node1<T>* getNext() const
 	{
 		return next;
@@ -96,20 +102,20 @@ public:
 		}
 		else if (Front == Rear)
 		{
-			Node1<T>* ff = Front;
+			T ff = Front->getItem();
 			delete Front;
 			Front = Rear = nullptr;
 			Counter--; // decrement counter
-			return ff->getItem();
+			return ff;
 		}
 		else
 		{
 			Node1<T>* delptr = Front;
+			T ff = Front->getItem();
 			Front = Front->getNext();
-			Node1<T>* ff = Front;
 			delete delptr;
 			Counter--; // decrement counter
-			return ff->getItem();
+			return ff;
 		}
 	}
 	void Display()
@@ -133,6 +139,14 @@ public:
 			return Front->getItem();
 		}
 	}
+
+	void FRONT(T &temp)
+	{
+		Front->getItem(temp);
+		return;
+	}
+
+
 	int Size() { // new function to return number of elements in queue
 		return Counter;
 	}

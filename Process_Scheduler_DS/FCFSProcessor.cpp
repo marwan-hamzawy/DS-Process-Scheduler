@@ -41,21 +41,23 @@ void FCFSProcessor::setbusytime(int busy)
 	busytime = busy;
 }
 
+
 //void FCFSProcessor::printStats() {}
 	
-int FCFSProcessor::UpdateRandomNum(Process* p) {
+int FCFSProcessor::UpdateRandomNum(Process*& p) {
 	if (!Run) {
-		p = RDY.DeQueue();
-		//RDY.DeQueue()
+		if (!RDY.IsEmpty())
+		{
+			Run = RDY.DeQueue();
+			//RDY.DeQueue()
+		}
 	}
-	int randomNumber = rand() % 3;   // generate a random integer between 0 and 2
-	if (randomNumber == 0) {
+	p = Run;
+	int randomNumber = rand()%15;   // generate a random integer between 0 and 2
 
-	}
-	else if (randomNumber == 1 || randomNumber == 2) {
+	if (randomNumber == 1 || randomNumber == 2) {
 		Run = nullptr;
 	}
-
 	return randomNumber;                // return the random number
 
 }

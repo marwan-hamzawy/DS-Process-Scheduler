@@ -34,7 +34,7 @@ void RRProcessor::RemoveProcess()
 	RDY.dequeue();
 }
 
-int RRProcessor::UpdateRandomNum(Process* p) {
+int RRProcessor::UpdateRandomNum(Process*& p) {
 	return 0;
 
 }

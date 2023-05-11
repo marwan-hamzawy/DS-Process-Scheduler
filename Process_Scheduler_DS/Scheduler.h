@@ -47,11 +47,14 @@ using namespace std;
 
 
 
+
 class Scheduler {
 public:
 	Queue<Process*> BLK;
 	Queue<Process*> TRM;
 	FCFSProcessor* FCFSptr = new FCFSProcessor[5];
+	int mode;
+	int clock = 0;
 	Scheduler() {
 		Process* PSESSptr;
 		int y = 1;
@@ -68,11 +71,31 @@ public:
 
 	}
 
-	
+	void UpdateIO()
+	{
+		Process* Run = nullptr;
+		if (BLK.IsEmpty())
+		{
+			return;
+		}
+		BLK.FRONT(Run);
+		int randomNumber = rand() % 100;
+		if (Run && randomNumber < 50)
+		{
+			BLK.DeQueue();
+			FCFSptr[0].AddToRDY(Run);
+		}
+	}
+
+
 	void Scheduler_Running() {
-		while (TRM.Size() != 20)
+		while (TRM.Size() != 30)
 		{
 			Process* PSESSptr = nullptr;
+			if (clock == 48)
+			{
+				cout << "";
+			}
 			for (int i = 0; i < 5; i++) {
 				int x = FCFSptr[i].UpdateRandomNum(PSESSptr);
 				
@@ -81,24 +104,34 @@ public:
 					if (x == 1) {
 						BLK.EnQueue(PSESSptr);
 					}
-					TRM.EnQueue(PSESSptr);
+					else if (x == 2)
+					{
+						TRM.EnQueue(PSESSptr);
+					}
 				}
 				PSESSptr = nullptr;
 			}
+			UpdateIO();
 			printprocess();
 		}
 	}
 	
 	
 	void printprocess() {
-	
-	
-		int mode;
-		cout << "-------------*Process Scheduler*--------------" << endl;
-		cout << "For Interactive Mode press ->>>> 1 " << endl;
-		cout << "For Step-by-Step Mode press ->>>> 2 " << endl;
-		cout << "For Silent Mode press ->>>> 3 " << endl;
-		cin >> mode;
+		if (clock==0)
+		{
+			cout << "Current timer is : " << clock;
+
+			cout << "-------------*Process Scheduler*--------------" << endl;
+			cout << "For Interactive Mode press ->>>> 1 " << endl;
+			cout << "For Step-by-Step Mode press ->>>> 2 " << endl;
+			cout << "For Silent Mode press ->>>> 3 " << endl;
+			cin >> mode;
+		}
+		clock++;
+
+		cout << "Current timer is : " << clock;
+
 		if (mode == 1) {
 			cout << "\n----------- RDY Processes ------------\n" << endl;
 			
@@ -114,16 +147,16 @@ public:
 			cout << "\n----------- RUN Processes ------------\n" << endl;
 			
 			for (int i = 0; i < 5; i++) {
-				
-				if (FCFSptr[i].getRun()) {
-					cout << FCFSptr[i].getRun();
+				Process* temp = FCFSptr[i].getRun();
+				if (temp) {
+					cout << "Processor: " << i << " > " << temp << "    ";
 				}
 			}
 			cout << "\n----------- TRM Processes ------------\n" << endl;
 			
 			TRM.Display();
 			
-			cout << "PRESS ANY KEY TO MOVE TO NEXT STEP !" << endl;
+			cout << "\nPRESS ANY KEY TO MOVE TO NEXT STEP !\n\n\n" << endl;
 			cin.get();
 		}
 	

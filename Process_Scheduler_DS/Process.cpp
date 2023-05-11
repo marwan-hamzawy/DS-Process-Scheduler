@@ -52,7 +52,7 @@ bool Process::allIoOpsCompleted() const
     return ioIndex >= NIO;
 }
  ostream& operator << (ostream& COUT, Process* p) {
-     COUT << p->getPid();
+     COUT << p->getPid() << "    ";
      return COUT;
 }
 
