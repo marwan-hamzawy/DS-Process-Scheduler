@@ -4,7 +4,7 @@
 class SJFProcessor:public Processor
 {
 private:
-	PriorityQueue<Process*> RDY;
+    PriorityQueue<Process*> RDY;
 public:
 
 	SJFProcessor(int numProcesses);
@@ -16,5 +16,9 @@ public:
 	 void setidealtime(int ideal) override;
 	 void setbusytime(int busy) override;
 	int UpdateRandomNum(Process*& p) override;
+
+    void PrintProcessor();
+
+    SJFProcessor();
 };
 
