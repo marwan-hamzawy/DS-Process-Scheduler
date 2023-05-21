@@ -14,11 +14,13 @@ private:
     int ioIndex; // index of the current IO operation
     int turnedroundtime;
     int waitingtime;
-    
+    int forkprop; //Fork probability 
     int priority; // priority level
     int timeRemaining; // remaining CPU time
     int STL; //Steal time
-    int probFork; //Fork probability  
+    Process* child;
+   
+    
     int RTF;  //for process migration (round robin list)
     int MaxW; //maximum wait time
 	int NF; //number of FCFS processors
@@ -30,7 +32,7 @@ private:
     
 public:
     int KillTime;
-    
+    int currentprocessorid;
     Process (int pid, int arrivalTime, int KillTime, int numIoOps, int* ioTimes, int* ioDurations);
 	~Process();
     // getters and setters for data members
@@ -41,10 +43,13 @@ public:
     int getIoTime(int index) const;
     int getIoDuration(int index) const; 
     friend ostream& operator << (ostream& COUT, Process* p);
-    
+    void setchild(Process* p);
+    Process* getchild();
     Process* next; // pointer to the next process in the ready queue
     bool allIoOpsCompleted() const;// function to check if process has completed all IO operations
-	
+    int getremaintime();
+    void setporcessorid(int id);
+    int getprocessorid();
 
 };
 

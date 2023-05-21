@@ -54,7 +54,35 @@ private:
 	int Counter;		// counter variable to keep track of number of elements in queue
 public:
 
-
+	bool removeitem(T& data)
+	{
+		Node1<T>* currnet=Front;
+		Node1<T>* prev =Front;
+		int c = 0;
+		while (currnet)
+		{
+			if (currnet->getItem() == data)
+			{
+				if (c == 0) {
+					Front = currnet->getNext();
+					delete currnet;
+					currnet = Front;
+				}
+				else
+				{
+					prev->setNext(currnet->getNext());
+					delete currnet;
+					currnet = prev;
+					
+				}
+				return true;
+			}
+			prev = currnet;
+			currnet = currnet->getNext();
+			c++;
+		}
+		return false;
+	}
 	Queue()
 	{
 		Front = nullptr;

@@ -1,16 +1,9 @@
-﻿  CircularQueue.cpp
-  FCFSProcessor.cpp
-  PriorityQueue.cpp
-  Process.cpp
-  Processor.cpp
-F:\CIE SPRG 2023\T01_DataStructure\Process-Scheduler-DSss\Process-Scheduler-DSss\Process_Scheduler_DS\Processor.cpp(17,10): warning C4244: 'return': conversion from 'const double' to 'int', possible loss of data
+﻿  FCFSProcessor.cpp
+C:\Users\moham\source\repos\DS-Process-Scheduler\Process_Scheduler_DS\FCFSProcessor.cpp(97,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Process_Scheduler_DS.cpp
-  Queue.cpp
-  RRProcessor.cpp
   Scheduler.cpp
-  SJFProcessor.cpp
   UI.cpp
   Generating Code...
-F:\CIE SPRG 2023\T01_DataStructure\Process-Scheduler-DSss\Process-Scheduler-DSss\Process_Scheduler_DS\Queue.h(120): warning C4715: 'Queue<Process *>::DeQueue': not all control paths return a value
-F:\CIE SPRG 2023\T01_DataStructure\Process-Scheduler-DSss\Process-Scheduler-DSss\Process_Scheduler_DS\Queue.h(120): warning C4715: 'Queue<Process *>::DeQueue': not all control paths return a value
-  Process_Scheduler_DS.vcxproj -> F:\CIE SPRG 2023\T01_DataStructure\Process-Scheduler-DSss\Process-Scheduler-DSss\x64\Debug\Process_Scheduler_DS.exe
+C:\Users\moham\source\repos\DS-Process-Scheduler\Process_Scheduler_DS\Queue.h(148): warning C4715: 'Queue<Process *>::DeQueue': not all control paths return a value
+C:\Users\moham\source\repos\DS-Process-Scheduler\Process_Scheduler_DS\Queue.h(148): warning C4715: 'Queue<Process *>::DeQueue': not all control paths return a value
+  Process_Scheduler_DS.vcxproj -> C:\Users\moham\source\repos\DS-Process-Scheduler\x64\Debug\Process_Scheduler_DS.exe

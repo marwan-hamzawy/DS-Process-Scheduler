@@ -9,6 +9,9 @@ private:
 	
 
 public:
+	
+	int id;
+	
 	int idealtime;
 	int busytime;
 	
@@ -28,5 +31,6 @@ public:
 	virtual int UpdateRandomNum(Process*& p) =0;
 	virtual void PrintProcessor() = 0;
 	Process* getRun() const;
+	int getprocessorid();
 };
 

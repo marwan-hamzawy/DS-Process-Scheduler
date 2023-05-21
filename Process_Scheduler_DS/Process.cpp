@@ -47,9 +47,33 @@ int Process::getIoDuration(int index) const
     return ioDurations[index];
 }
 
+void Process::setchild(Process* p)
+{
+    child = p;
+}
+
+Process* Process::getchild()
+{
+    return child;
+}
+
+
+
 bool Process::allIoOpsCompleted() const
 {
     return ioIndex >= NIO;
+}
+int Process::getremaintime()
+{
+    return timeRemaining;
+}
+void Process::setporcessorid(int id)
+{
+    currentprocessorid = id;
+}
+int Process::getprocessorid()
+{
+    return currentprocessorid;
 }
  ostream& operator << (ostream& COUT, Process* p) {
      COUT << p->getPid() << "    ";
