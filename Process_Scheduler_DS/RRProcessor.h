@@ -18,6 +18,8 @@ public:
 	virtual void setidealtime(int ideal);
 	virtual void setbusytime(int busy);
 	int UpdateRandomNum(Process*& p) override;
+    void PrintProcessor() override;
+    void RemoveProcess(Process* p) override;
 
 };
 

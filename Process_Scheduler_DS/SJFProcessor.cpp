@@ -2,6 +2,7 @@
 
 SJFProcessor::SJFProcessor(int numProcesses):Processor(numProcesses)
 {
+
 }
 int SJFProcessor::getidealtime()
 {
@@ -35,7 +36,12 @@ void SJFProcessor::RemoveProcess(Process* p)
 int SJFProcessor ::UpdateRandomNum(Process*& p){
 	return 0;
 }
+void SJFProcessor ::PrintProcessor() {
+    RDY.Display();
+}
 
 void SJFProcessor::ScheduleAlgo(Process* p)
 {
 }
+
+

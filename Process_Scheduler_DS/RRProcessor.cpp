@@ -45,3 +45,9 @@ void RRProcessor::ScheduleAlgo(Process* p)
 	
 
 }
+void RRProcessor::PrintProcessor() {
+    RDY.Display();
+}
+void RRProcessor::RemoveProcess(Process* p) {
+    RDY.dequeue();
+}

@@ -31,6 +31,12 @@ public:
         rear = (rear + 1) % N;
         ++count;
     }
+    void Display() {
+        for (int i = 0; i < count; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
 
     T dequeue() {
         if (isEmpty()) {
