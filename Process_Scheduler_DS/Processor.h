@@ -27,6 +27,7 @@ public:
 	virtual void setbusytime(int busy)=0;
 	virtual int UpdateRandomNum(Process*& p) =0;
 	virtual void PrintProcessor() = 0;
+	virtual int ShortSizeFCFS() = 0;
 	Process* getRun() const;
 };
 

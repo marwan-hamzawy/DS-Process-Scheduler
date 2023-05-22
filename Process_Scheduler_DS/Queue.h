@@ -146,16 +146,9 @@ public:
 		return;
 	}
 
-	T getFront() const
+	Node1<T>* getFront() const
 	{
-		if (IsEmpty())
-		{
-			throw std::runtime_error("The Queue is empty.");
-		}
-		else
-		{
-			return Front->getItem();
-		}
+		return Front;
 	}
 
 	int Size() { // new function to return number of elements in queue

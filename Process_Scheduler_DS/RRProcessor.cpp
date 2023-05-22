@@ -51,3 +51,7 @@ void RRProcessor::PrintProcessor() {
 void RRProcessor::RemoveProcess(Process* p) {
     RDY.dequeue();
 }
+
+int RRProcessor :: ShortSizeFCFS(){
+	return 0;
+}

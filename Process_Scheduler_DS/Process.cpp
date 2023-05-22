@@ -55,6 +55,34 @@ bool Process::allIoOpsCompleted() const
 int Process::getCPUtime() const {
     return CT;
 }
+ 
+bool Process::ExecuteIO() {
+    if (ioDurations[0] != 0) {
+        ioDurations[0]--;
+        return false;
+    }
+    else {
+        for (int i = 0; i < NIO; i++) {
+            ioDurations[i] = ioDurations[i + 1];
+            ioTimes[i] = ioTimes[i + 1];
+        }
+        NIO--;
+        return true;
+    }
+           
+}
+
+void Process::Execute() {
+    CT--;                       //we here reduce the cputime with one
+    runtime++;
+
+}
+bool Process::ifneedIO() {
+    if (runtime == ioTimes[0])
+        return true;
+    else
+        return false;
+}
 
  ostream& operator << (ostream& COUT, Process* p) {
      COUT << p->getPid() << "    ";

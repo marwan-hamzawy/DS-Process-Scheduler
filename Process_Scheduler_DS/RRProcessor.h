@@ -20,6 +20,7 @@ public:
 	int UpdateRandomNum(Process*& p) override;
     void PrintProcessor() override;
     void RemoveProcess(Process* p) override;
+	int ShortSizeFCFS() override;
 
 };
 

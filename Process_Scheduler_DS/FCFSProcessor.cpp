@@ -81,13 +81,26 @@ int FCFSProcessor::UpdateRandomNum(Process*& p) {
 		}
 	}
 	p = Run;
+	
+
 	int randomNumber = rand()%15;   // generate a random integer between 0 and 2
 
-	if (randomNumber == 1 || randomNumber == 2) {
-		Run = nullptr;
-	}
-	return randomNumber;                // return the random number
+	// in the if statement we would check if the CPUtime == 0
+	if (Run) {
+		p->Execute();					//Here we chould make a function ""Execute" that 
 
+		if (p->getCPUtime() == 0) {
+			Run = nullptr;
+			return 1;
+		}
+
+		if (p->ifneedIO()) {
+			Run = nullptr;
+			return 2;
+		}
+	}
+
+	return 0;
 }
 
 void FCFSProcessor::ScheduleAlgo(Process* p)

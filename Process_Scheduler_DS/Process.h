@@ -8,6 +8,7 @@ private:
 	int PId; //process id
 	int AT; //Arrival time
 	int CT; //CPU Time
+    int runtime =0;
 	int NIO; // number of io operations
     int* ioTimes; // array to store IO operation times
     int* ioDurations; // array to store IO operation durations
@@ -31,6 +32,7 @@ private:
 public:
     int KillTime;
     
+    Process(){}
     Process (int pid, int arrivalTime, int CT, int numIoOps, int* ioTimes, int* ioDurations);
 	~Process();
     // getters and setters for data members
@@ -42,7 +44,10 @@ public:
     int getIoDuration(int index) const; 
     int getCPUtime() const;
     friend ostream& operator << (ostream& COUT, Process* p);
-    
+    void Execute();
+    bool ExecuteIO();
+    bool ifneedIO();
+        
     Process* next; // pointer to the next process in the ready queue
     bool allIoOpsCompleted() const;// function to check if process has completed all IO operations
 	
