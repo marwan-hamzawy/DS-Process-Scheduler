@@ -1,7 +1,7 @@
 #include "Process.h"
 
-Process::Process(int pid, int arrivalTime, int KillTime, int numIoOps, int* ioTimes, int* ioDurations) : PId(pid),
-AT(arrivalTime), KillTime(KillTime),ioIndex(0), NIO(numIoOps), ioTimes(new int[numIoOps]),
+Process::Process(int pid, int arrivalTime, int CT, int numIoOps, int* ioTimes, int* ioDurations) : PId(pid),
+AT(arrivalTime), CT(CT),ioIndex(0), NIO(numIoOps), ioTimes(new int[numIoOps]),
  ioDurations(new int[numIoOps])
 {
     for (int i = 0; i < numIoOps; i++)
