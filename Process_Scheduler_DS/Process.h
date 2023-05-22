@@ -18,6 +18,7 @@ private:
     int priority; // priority level
     int timeRemaining; // remaining CPU time
     int STL; //Steal time
+    int terminationtime;
     Process* child;
    
     
@@ -50,6 +51,12 @@ public:
     int getremaintime();
     void setporcessorid(int id);
     int getprocessorid();
+    int getwaitingtime();
+    int getterminationtime();
+    void setterminationtime(int tm);
+    int getturnroundtime();
+    void setturnroundtime();
+    int getCT();
 
 };
 

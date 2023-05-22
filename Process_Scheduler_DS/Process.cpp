@@ -75,6 +75,30 @@ int Process::getprocessorid()
 {
     return currentprocessorid;
 }
+int Process::getwaitingtime()
+{
+    return waitingtime;
+}
+int Process::getterminationtime()
+{
+    return  terminationtime;
+}
+void Process::setterminationtime(int tm)
+{
+    terminationtime = tm;
+}
+int Process::getturnroundtime()
+{
+    return turnedroundtime;
+}
+void Process::setturnroundtime()
+{
+    turnedroundtime = terminationtime - AT;
+}
+int Process::getCT()
+{
+    return CT;
+}
  ostream& operator << (ostream& COUT, Process* p) {
      COUT << p->getPid() << "    ";
      return COUT;

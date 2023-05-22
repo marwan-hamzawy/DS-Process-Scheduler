@@ -178,4 +178,16 @@ public:
 	int Size() { // new function to return number of elements in queue
 		return Counter;
 	}
+	template<typename T>
+	int count()
+	{
+		int c = 0;
+		Node1<T>* temp = Front;
+		while (temp)
+		{
+			c++;
+			temp = temp->getnext();
+		}
+		return c;
+	}
 };
