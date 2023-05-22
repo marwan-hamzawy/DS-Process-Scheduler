@@ -41,6 +41,8 @@ void FCFSProcessor::setbusytime(int busy)
 	busytime = busy;
 }
 
+//function to get the lenght of the fcfs processor to know the while number of the cpu time of that processor
+//return data type of int
 
 //void FCFSProcessor::printStats() {}
 	
