@@ -1,6 +1,8 @@
 #pragma once
 #include"Processor.h"
 #include"Queue.h"
+#include "Process.h"
+
 
 class FCFSProcessor:public Processor
 {
