@@ -309,7 +309,7 @@ public:
             for (int i = 0; i < FCFS_COUNT + SJF_COUNT + RR_COUNT; i++) {
 
                 int x = processorsList[i]->UpdateRandomNum(PSESSptr);
-
+                processorsList[i]->ScheduleAlgo(PSESSptr);
                 if (PSESSptr) {
                     if (x == 2) {
                         BLK.EnQueue(PSESSptr);
@@ -320,6 +320,7 @@ public:
                 }
                 PSESSptr = nullptr;
             }
+
             printprocess(); // move printprocess() here
             UpdateIO();
         }

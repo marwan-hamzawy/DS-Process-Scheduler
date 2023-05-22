@@ -15,7 +15,7 @@ public:
 	RRProcessor(int ts);
 //	virtual void AddToRDY(Process* p);
 	virtual void RemoveProcess();
-	virtual void ScheduleAlgo(Process* p);
+	void ScheduleAlgo(Process* p) override;
 	virtual int getidealtime();
 	virtual int getbusytime();
 	virtual void setidealtime(int ideal);

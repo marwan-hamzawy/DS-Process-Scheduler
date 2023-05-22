@@ -1,5 +1,4 @@
 #include "SJFProcessor.h"
-
 SJFProcessor::SJFProcessor(int numProcesses):Processor(numProcesses)
 {
 

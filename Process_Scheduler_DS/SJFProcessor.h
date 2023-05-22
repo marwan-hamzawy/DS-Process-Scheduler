@@ -10,7 +10,7 @@ public:
 	SJFProcessor(int numProcesses);
 	 void AddToRDY(Process* p) override;
 	 void RemoveProcess(Process* p) override;
-	 void ScheduleAlgo(Process* p) override;
+	 virtual void ScheduleAlgo(Process* p) override;
 	 int getidealtime() override;
 	 int getbusytime() override;
 	 void setidealtime(int ideal) override;
