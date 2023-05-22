@@ -3,4 +3,4 @@ project(DS_Process_Scheduler)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(DS_Process_Scheduler main.cpp)
+add_executable(DS_Process_Scheduler main.cpp Process_Scheduler_DS/CircularQueue.cpp Process_Scheduler_DS/CircularQueue.h Process_Scheduler_DS/FCFSProcessor.h Process_Scheduler_DS/PriorityQueue.cpp Process_Scheduler_DS/Process.h Process_Scheduler_DS/Process.cpp Process_Scheduler_DS/Processor.cpp Process_Scheduler_DS/Queue.cpp Process_Scheduler_DS/RRProcessor.cpp Process_Scheduler_DS/Scheduler.cpp Process_Scheduler_DS/SJFProcessor.cpp Process_Scheduler_DS/UI.cpp)
