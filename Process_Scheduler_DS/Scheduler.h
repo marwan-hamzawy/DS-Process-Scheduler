@@ -235,7 +235,7 @@ public:
         FCFSptr = new FCFSProcessor[5];
         clock = 0;
         mode = 1;
-        readProcessesFromFile("C:/Users/moham/source/repos/DS-Process-Scheduler/Process_Scheduler_DS/input.txt");
+        readProcessesFromFile("/Users/mohamedghaith/Documents/DS-Process-Scheduler/input.txt");
     }
 
     void readProcessesFromFile(const string& filename) {
