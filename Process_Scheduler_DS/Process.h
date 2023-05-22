@@ -31,7 +31,7 @@ private:
 public:
     int KillTime;
     
-    Process (int pid, int arrivalTime, int KillTime, int numIoOps, int* ioTimes, int* ioDurations);
+    Process (int pid, int arrivalTime, int CT, int numIoOps, int* ioTimes, int* ioDurations);
 	~Process();
     // getters and setters for data members
     int getPid() const;
@@ -40,6 +40,7 @@ public:
     int getIoIndex() const;     
     int getIoTime(int index) const;
     int getIoDuration(int index) const; 
+    int getCPUtime() const;
     friend ostream& operator << (ostream& COUT, Process* p);
     
     Process* next; // pointer to the next process in the ready queue

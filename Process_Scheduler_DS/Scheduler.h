@@ -242,6 +242,7 @@ public:
             BLK.DeQueue();
             processorsList[0]->AddToRDY(Run);
             //in the above line u need to modify the zero and make alogic to get the minimum processor to addit to the run
+            //like that minmium.addtoready(new.dequeue)
         }
     }
     void Scheduleralgo() {
@@ -251,6 +252,17 @@ public:
     }
     // Function that take check the whole size of the list of the fcfs processors by take the first one as the minimum and check the others if there were
     //less that the first assumed one and its return data type is processor 
+    FCFSProcessor* minimumProcessor() {
+        processorsList = new FCFSProcessor*  [FCFS_COUNT];
+        int mini = processorsList[0]->getCurrentTime();
+        for (int i = 0; i < FCFS_COUNT; i++) {
+            if (processorsList[i]->getCurrentTime() < processorsList[0]->getCurrentTime()) {
+                mini = processorsList[i]->getCurrentTime();
+            }
+            return processorsList[i];
+        }
+        
+    }
     void Scheduler_Running() {
         while (TRM.Size() != 30) {
             //call for each iteration to check if there were a process to put it into the ready

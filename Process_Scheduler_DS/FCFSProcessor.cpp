@@ -41,8 +41,34 @@ void FCFSProcessor::setbusytime(int busy)
 	busytime = busy;
 }
 
-//function to get the lenght of the fcfs processor to know the while number of the cpu time of that processor
+//function to get the length of the fcfs processor to know the while number of the cpu time of that processor
 //return data type of int
+int FCFSProcessor::ShortSizeFCFS() {
+	//int totalCPUTime = 0;
+
+	//Process* currentItem = RDY.FRONT();  // Get the front item of the linked list
+
+	//// Iterate over the linked list until the end
+	//while (currentItem != nullptr) {
+	//	totalCPUTime += currentItem->getCPUtime();
+	//	currentItem = currentItem->getNext();  // Move to the next item (assuming you have a getNext() function in your Process class)
+	//}
+
+	//return totalCPUTime;
+
+	int totalCPUTime = 0;
+
+	Node1<Process*>* currentNode = RDY.getFront();  // Get the front node of the linked list
+
+	// Iterate over the linked list until the desired index
+	for (int i = 0; i < RDY.Size(); i++) {
+		Process* p = currentNode->getItem();
+		totalCPUTime += p->getCPUtime();
+		currentNode = currentNode->getNext();  // Move to the next node
+	}
+
+	return totalCPUTime;
+}
 
 //void FCFSProcessor::printStats() {}
 	

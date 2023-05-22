@@ -51,6 +51,11 @@ bool Process::allIoOpsCompleted() const
 {
     return ioIndex >= NIO;
 }
+
+int Process::getCPUtime() const {
+    return CT;
+}
+
  ostream& operator << (ostream& COUT, Process* p) {
      COUT << p->getPid() << "    ";
      return COUT;
