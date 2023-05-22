@@ -1,9 +1,9 @@
 #include "RRProcessor.h"
 
-RRProcessor::RRProcessor(int numProcesses):Processor(numProcesses)
+RRProcessor::RRProcessor(int numProcesses, int ts):Processor(numProcesses)
 {
-	
-	time_slice = 0;
+
+	time_slice = ts;
 }
 int RRProcessor::getidealtime()
 {
@@ -41,8 +41,31 @@ int RRProcessor::UpdateRandomNum(Process*& p) {
 
 void RRProcessor::ScheduleAlgo(Process* p)
 {
-	Process* x = RDY.dequeue();
-	
+        if (Run != nullptr) {
+            if (Run->getRemainingTime() > 0) {
+                // Service the running process
+                Run->setRemainingTime(Run->getRemainingTime() - 1);
+                time_slice--;
+
+                if (Run->getRemainingTime() == 0) {
+                    // Process completed
+                    RemoveProcess(Run);
+                    Run = nullptr;
+                } else if (time_slice == 0) {
+                    // Time quantum expired, move the process to the end of the ready queue
+                    AddToRDY(Run);
+                    Run = nullptr;
+                }
+            }
+        }
+
+        if (Run == nullptr && !RDY.isEmpty()) {
+            // Get the next process from the ready queue and start running it
+            RDY.dequeue();
+            Run->setRemainingTime(Run->getRemainingTime() - 1);
+        }
+
+
 
 }
 void RRProcessor::PrintProcessor() {

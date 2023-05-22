@@ -48,7 +48,46 @@ public:
         delete temp;
         return data;
     }
+    void removeProccess(T data) {
+        if (empty()) {
+            return;
+        }
+        Node* curr = head;
+        Node* prev = nullptr;
+        while (curr != nullptr && curr->data != data) {
+            prev = curr;
+            curr = curr->next;
+        }
+        if (curr == nullptr) {
+            return;
+        }
+        if (curr == head) {
+            head = head->next;
+        }
+        else {
+            prev->next = curr->next;
+        }
+        delete curr;
+    }
 
+    T peek() {
+        if (empty()) {
+            return T();
+        }
+        return head->data;
+    }
+    T getFront() {
+        if (empty()) {
+            return T();
+        }
+        return head->data;
+    }
+    T getNext() {
+        if (empty()) {
+            return T();
+        }
+        return head->next->data;
+    }
     T print() const {
         Node* curr = head;
         while (curr != nullptr) {

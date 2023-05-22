@@ -169,6 +169,8 @@
 #pragma once
 #include "Processor.h"
 #include "FCFSProcessor.h"
+#include "RRProcessor.h"
+#include "SJFProcessor.h"
 #include "Process.h"
 #include <iostream>
 #include <fstream>
@@ -182,6 +184,9 @@ public:
 
     Queue<Process*> TRM;
     Processor** processorsList;
+    FCFSProcessor** FCFSList;
+    RRProcessor** RRList;
+    SJFProcessor** SJFList;
     int mode;
     int clock;
     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
@@ -190,7 +195,7 @@ public:
     Scheduler() {
         clock = 0;
         mode = 1;
-        readProcessesFromFile("F:/CIE SPRG 2023/Alaa's Ph2 CODE/DS-Process-Scheduler/input.txt");
+        readProcessesFromFile("/Users/mohamedghaith/Documents/DS-Process-Scheduler/input.txt");
     }
 
     void readProcessesFromFile(const string& filename) {
@@ -206,6 +211,12 @@ public:
         for (int i = 0; i < FCFS_COUNT; i++) {
             processorsList[i] = new FCFSProcessor();
         }
+//        for (int i = 0; i < RR_COUNT; i++) {
+//            RRList[i] = new RRProcessor(RR_SLICE);
+//        }
+//        for (int i = 0; i < SJF_COUNT; i++) {
+//            SJFList[i] = new SJFProcessor();
+//        }
         
         
         for (int i = 0; i < numProcesses; i++) {

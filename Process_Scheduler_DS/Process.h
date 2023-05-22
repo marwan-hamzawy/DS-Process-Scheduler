@@ -45,6 +45,9 @@ public:
     int getCPUtime() const;
     friend ostream& operator << (ostream& COUT, Process* p);
     void Execute();
+    int getRemainingTime() const;
+    void setRemainingTime(int time);
+    int getTimeLeft() const;
     bool ExecuteIO();
     bool ifneedIO();
         
