@@ -1,11 +1,11 @@
 
 
-//#pragma once
-//#include"Processor.h"
-//#include"FCFSProcessor.h"
-//#include"Process.h"
-//#include<iostream>
-//using namespace std;
+#pragma once
+#include"Processor.h"
+#include"FCFSProcessor.h"
+#include"Process.h"
+#include<iostream>
+using namespace std;
 //
 ////class Scheduler
 ////{
@@ -190,9 +190,8 @@ public:
     Scheduler() {
         clock = 0;
         mode = 1;
-        readProcessesFromFile("F:/CIE SPRG 2023/Alaa's Ph2 CODE/DS-Process-Scheduler/input.txt");
+        readProcessesFromFile("/Users/mohamedghaith/Documents/DS-Process-Scheduler/input.txt");
     }
-
     void readProcessesFromFile(const string& filename) {
         ifstream inputFile(filename);
         if (!inputFile.is_open()) {
@@ -244,6 +243,9 @@ public:
             //in the above line u need to modify the zero and make alogic to get the minimum processor to addit to the run
         }
     }
+    void addtoBLK(Process* P) {
+        BLK.EnQueue(P);
+    }
     void Scheduleralgo() {
         while (NEW.FRONT()->getArrivalTime() == clock) {
             //minmium.addtoready(new.dequeue)
@@ -272,7 +274,9 @@ public:
             UpdateIO();
         }
     }
-
+    void terminateProcess(Process* P) {
+        TRM.EnQueue(P);
+    }
     void printprocess() {
         if (clock == 0) {
             cout << "Current timer is: " << clock << endl;

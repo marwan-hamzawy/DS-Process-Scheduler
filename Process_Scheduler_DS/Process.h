@@ -1,5 +1,7 @@
 #pragma once
 #include<iostream>
+#include"Process.h"
+#include "Scheduler.h"
 using namespace std;
 
 class Process
@@ -14,7 +16,8 @@ private:
     int ioIndex; // index of the current IO operation
     int turnedroundtime;
     int waitingtime;
-    
+
+
     int priority; // priority level
     int timeRemaining; // remaining CPU time
     int STL; //Steal time
@@ -37,14 +40,18 @@ public:
     int getPid() const;
     int getArrivalTime() const;
     int getNumIoOps() const;
-    int getIoIndex() const;     
+    int getIoIndex() const;
+    int getTimeLeft() const;
     int getIoTime(int index) const;
     int getIoDuration(int index) const; 
     friend ostream& operator << (ostream& COUT, Process* p);
     
     Process* next; // pointer to the next process in the ready queue
     bool allIoOpsCompleted() const;// function to check if process has completed all IO operations
-	
 
+
+    int getRemainingTime() const;
+
+    void setRemainingTime(int time);
 };
 

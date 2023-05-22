@@ -1,11 +1,13 @@
 #pragma once
 #include"Process.h"
+#include"Scheduler.h"
 class Processor
 {
 private:
 	
 	int numProcesses; // number of processes in the ready queue
 	double current_time;
+
 	
 
 public:
@@ -15,7 +17,7 @@ public:
 	Process* Run = nullptr;
 
 	Processor(int numProcesses);
-	virtual void ScheduleAlgo(Process* processes) = 0;
+    virtual void ScheduleAlgo(Process* p, Scheduler* s) = 0;
 	virtual void AddToRDY(Process* p)=0;
 	virtual void RemoveProcess(Process* p)=0;
 	//virtual void printStats() = 0;

@@ -1,6 +1,8 @@
 #pragma once
 #include"Processor.h"
 #include"Queue.h"
+#include"Scheduler.h"
+#include"Process.h"
 
 class FCFSProcessor:public Processor
 {
@@ -12,7 +14,7 @@ public:
 	FCFSProcessor(int numProcesses);
 	 void AddToRDY(Process* p) override;
 	 void RemoveProcess(Process* p) override;
-	 void ScheduleAlgo(Process* p) override;
+	 void ScheduleAlgo(Process* p, Scheduler* s) override;
 	//virtual void printStats() override;
 	 int getidealtime() override;
 	 int getbusytime() override;
@@ -21,5 +23,6 @@ public:
 	 int UpdateRandomNum(Process*& p) override;
 	 void PrintProcessor() override;
 
+    void getremainingtime(Process *&p);
 };
 

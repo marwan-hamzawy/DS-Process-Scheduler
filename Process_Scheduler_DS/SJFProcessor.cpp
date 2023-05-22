@@ -39,9 +39,15 @@ int SJFProcessor ::UpdateRandomNum(Process*& p){
 void SJFProcessor ::PrintProcessor() {
     RDY.Display();
 }
-
+//here the schedule algo will select the waiting process with the shortest cpu time to execute next
 void SJFProcessor::ScheduleAlgo(Process* p)
 {
-}
+    if (!Run) {
+        if (!RDY.empty())
+        {
 
+        }
+    }
+
+}
 
