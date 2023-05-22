@@ -27,6 +27,7 @@ void RRProcessor::setbusytime(int busy)
 void RRProcessor::AddToRDY(Process* p)
 {
 	RDY.enqueue(p);
+	p->setporcessorid(id);
 }
 
 void RRProcessor::RemoveProcess()

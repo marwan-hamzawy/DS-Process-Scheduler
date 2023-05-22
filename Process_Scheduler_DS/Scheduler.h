@@ -178,11 +178,14 @@
 using namespace std;
 
 class Scheduler {
+
+    
 public:
     Queue<Process*> BLK;
     Queue<Process*> NEW;
 
     Queue<Process*> TRM;
+
     Processor** processorsList;
     FCFSProcessor** FCFSList;
     RRProcessor** RRList;
@@ -191,6 +194,57 @@ public:
     int clock;
     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
 
+// =======
+//     FCFSProcessor* FCFSptr;
+//     int numofprocesses;
+//     int mode;
+//     int clock;
+    int forkprop=10;
+
+    bool checkfork() 
+    {
+        Process* p;
+        for (int i = 0; i < 5; i++)
+        {
+            
+           bool x= FCFSptr[i].forkrequired(p,forkprop,clock,numofprocesses);
+           if (x) {
+               numofprocesses++;
+               FCFSptr[i].AddToRDY(p);
+
+           }
+        }
+
+    }
+    Processor* getprocessorid(int id) {
+        for (int i = 0; i < 5; i++)
+        {
+
+            if (FCFSptr[i].getprocessorid() == id)
+            {
+                return &FCFSptr[i];
+            }
+        }
+    }
+    void killorph(Process* p)
+    {
+        
+        if(p->getchild())
+        {
+            killorph(p->getchild());
+            
+        }
+        int processorid = p->getprocessorid();
+        Processor* pr = getprocessorid(processorid);
+        if (dynamic_cast<FCFSProcessor*> (pr)) //check type of processor
+        {
+            FCFSProcessor* fc = dynamic_cast<FCFSProcessor*> (pr);
+
+            fc->RemoveProcess2(p);
+            TRM.EnQueue(p);
+
+        }
+    }
 
     Scheduler() {
         clock = 0;
@@ -204,6 +258,7 @@ public:
             cout << "Failed to open input file." << endl;
             return;
         }
+
 
         inputFile >> FCFS_COUNT >> SJF_COUNT >> RR_COUNT >> RR_SLICE >> Fork_Prop >> numProcesses;
         processorsList = new Processor * [FCFS_COUNT + SJF_COUNT + RR_COUNT];
