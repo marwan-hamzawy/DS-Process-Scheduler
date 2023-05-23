@@ -47,5 +47,8 @@ void SJFProcessor ::PrintProcessor() {
 void SJFProcessor::ScheduleAlgo(Process* p)
 {
 }
+int SJFProcessor::ShortSizeFCFS() {
+	return 0;
+}
 
 

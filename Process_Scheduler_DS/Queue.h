@@ -174,6 +174,10 @@ public:
 		return;
 	}
 
+	Node1<T>* getFront() const
+	{
+		return Front;
+	}
 
 	int Size() { // new function to return number of elements in queue
 		return Counter;

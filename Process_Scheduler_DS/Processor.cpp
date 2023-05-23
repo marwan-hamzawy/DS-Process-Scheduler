@@ -22,7 +22,10 @@ int Processor::getCurrentTime() const
 Process* Processor :: getRun() const
 {
 	return Run;
+	/*Process* foo = new Process ;
+	return (Process*)foo->getCPUtime();*/
 }
+
 
 int Processor::getprocessorid()
 {

@@ -172,6 +172,7 @@
 #include "Process.h"
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
 class Scheduler {
@@ -179,7 +180,10 @@ class Scheduler {
     
 public:
     Queue<Process*> BLK;
+    Queue<Process*> NEW;
+
     Queue<Process*> TRM;
+
     FCFSProcessor* FCFSptr;
     int numofprocesses;
     int mode;
@@ -230,12 +234,20 @@ public:
 
         }
     }
+// =======
+//     Processor** processorsList;
+//     int mode;
+//     int clock;
+//     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
+
+// >>>>>>> dev
 
     Scheduler() {
-        FCFSptr = new FCFSProcessor[5];
         clock = 0;
         mode = 1;
+
         readProcessesFromFile("/Users/mohamedghaith/Documents/DS-Process-Scheduler/input.txt");
+
     }
 
     void readProcessesFromFile(const string& filename) {
@@ -245,10 +257,20 @@ public:
             return;
         }
 
+// <<<<<<< op
         int numProcesses;
         inputFile >> numProcesses;
         numofprocesses = numProcesses;
+// =======
+        inputFile >> FCFS_COUNT >> SJF_COUNT >> RR_COUNT >> RR_SLICE >> Fork_Prop >> numProcesses;
+        processorsList = new Processor * [FCFS_COUNT + SJF_COUNT + RR_COUNT];
+// >>>>>>> dev
 
+        for (int i = 0; i < FCFS_COUNT; i++) {
+            processorsList[i] = new FCFSProcessor();
+        }
+        
+        
         for (int i = 0; i < numProcesses; i++) {
             int arrivalTime, pid, cpuTime, numIO;
             inputFile >> arrivalTime >> pid >> cpuTime >> numIO;
@@ -262,9 +284,11 @@ public:
 
             Process* process = new Process(pid, arrivalTime, cpuTime, numIO, ioTimes, ioDurations);
 
-            // Add the process FCFSProcessorz
-            int index = i % 5; // Cycle through the processors
-            FCFSptr[index].AddToRDY(process);
+            //// Add the process FCFSProcessorz
+            //int index = i % 5; // Cycle through the processors
+            //FCFSptr[index].AddToRDY(process);
+            NEW.EnQueue(process);
+
         }
 
         inputFile.close();
@@ -276,24 +300,73 @@ public:
             return;
         }
         BLK.FRONT(Run);
+
+        //int shortestIndex = 0;
+        //int shortestSize = processorsList[0]->ShortSizeFCFS();
+
+        //// Find the processor with the shortest size
+        //for (int i = 1; i < FCFS_COUNT; i++) {
+        //    int size = processorsList[i]->ShortSizeFCFS();
+        //    if (size < shortestSize) {
+        //        shortestSize = size;
+        //        shortestIndex = i;
+        //    }
+        //}
+
+        //// Add the process to the processor with the shortest size
+        //BLK.DeQueue();
+        //processorsList[shortestIndex]->AddToRDY(Run);
+
+        
         int randomNumber = rand() % 100;
-        if (Run && randomNumber < 50) {
+       bool x =  Run->ExecuteIO();
+
+        if (Run && x) {
+
             BLK.DeQueue();
-            FCFSptr[0].AddToRDY(Run);
+            minimumProcessor()->AddToRDY(Run);
+            //in the above line u need to modify the zero and make alogic to get the minimum processor to addit to the run
+            //like that minmium.addtoready(new.dequeue)
         }
+
+    }
+    void Scheduleralgo() {
+        while (NEW.FRONT()->getArrivalTime() == clock) {
+            //minmium.addtoready(new.dequeue)
+            minimumProcessor()->AddToRDY(NEW.DeQueue());
+        }
+    }
+    // Function that take check the whole size of the list of the fcfs processors by take the first one as the minimum and check the others if there were
+    //less than the first assumed one and its return data type is processor 
+    Processor* minimumProcessor() {
+        int mini = processorsList[0]->ShortSizeFCFS();
+        int shortestIndex = 0;
+
+        for (int i = 0; i < FCFS_COUNT; i++) {
+            if (processorsList[i]->ShortSizeFCFS() < mini) {
+                mini = processorsList[i]->ShortSizeFCFS();
+                shortestIndex = i;
+            }
+        }
+
+        return processorsList[shortestIndex];
     }
 
     void Scheduler_Running() {
-        while (TRM.Size() != 30) {
+        while (TRM.Size() != numProcesses) {
+            //call for each iteration to check if there were a process to put it into the ready
+            Scheduleralgo();
             Process* PSESSptr = nullptr;
-            for (int i = 0; i < 5; i++) {
-                int x = FCFSptr[i].UpdateRandomNum(PSESSptr);
+
+            for (int i = 0; i < FCFS_COUNT + SJF_COUNT + RR_COUNT; i++) {
+
+                int x = processorsList[i]->UpdateRandomNum(PSESSptr);
 
                 if (PSESSptr) {
-                    if (x == 1) {
+                    if (x == 2) {
                         BLK.EnQueue(PSESSptr);
                     }
-                    else if (x == 2) {
+                    else if (x == 1) {
                         TRM.EnQueue(PSESSptr);
                     }
                 }
@@ -320,9 +393,9 @@ public:
         if (mode == 1) {
             cout << "\n----------- RDY Processes ------------\n" << endl;
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < FCFS_COUNT + SJF_COUNT + RR_COUNT; i++) {
                 cout << "Processor " << i << ": ";
-                FCFSptr[i].PrintProcessor();
+                processorsList[i]->PrintProcessor();
                 cout << endl;
             }
 
@@ -330,9 +403,9 @@ public:
             BLK.Display();
             cout << "----------- RUN Processes ------------" << endl;
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < FCFS_COUNT + SJF_COUNT + RR_COUNT; i++) {
                 cout << "Processor " << i << ": ";
-                Process* temp = FCFSptr[i].getRun();
+                Process* temp = processorsList[i]->getRun();
                 if (temp) {
                     cout << temp->getPid();
                 }
