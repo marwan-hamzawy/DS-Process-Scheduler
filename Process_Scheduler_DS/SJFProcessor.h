@@ -12,8 +12,7 @@ public:
 	 void RemoveProcess(Process* p) override;
 
 	 virtual void ScheduleAlgo(Process* p) override;
-	 
-	 void ScheduleAlgo(Process* p) override;
+
 
 	 int getidealtime() override;
 	 int getbusytime() override;

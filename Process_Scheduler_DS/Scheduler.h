@@ -242,10 +242,9 @@ public:
 // <<<<<<< ghaith7
 // =======
 // // =======
-// //     Processor** processorsList;
-// //     int mode;
-// //     int clock;
-// //     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
+      Processor** processorsList;
+ //     int mode;
+      int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
 
 // // >>>>>>> dev
 // >>>>>>> dev
@@ -269,9 +268,9 @@ public:
 
 // =======
 // // <<<<<<< op
-//         int numProcesses;
-//         inputFile >> numProcesses;
-//         numofprocesses = numProcesses;
+         int numProcesses;
+         inputFile >> numProcesses;
+         numofprocesses = numProcesses;
 // // =======
 // >>>>>>> dev
         inputFile >> FCFS_COUNT >> SJF_COUNT >> RR_COUNT >> RR_SLICE >> Fork_Prop >> numProcesses;

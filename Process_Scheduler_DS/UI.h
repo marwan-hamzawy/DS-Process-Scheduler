@@ -18,7 +18,7 @@ public:
 		
 	}
 
-	void write_processess(Queue<Processor*>* listofprocessors,Queue<Process*>* TRM, int forking_counter, int killed_counter) {
+	void w_output(Queue<Processor*>* listofprocessors,Queue<Process*>* TRM, int forking_counter, int killed_counter) {
 		ofstream myfile;
 		myfile.open("output.txt");
 
@@ -49,14 +49,11 @@ public:
 			myfile << "P" << p->getprocessorid() << " : " << 100 * (p->getbusytime() / allTRT) << "   ";
 		}
 		myfile << "\n";
-		myfile << "Processors Utiliz" << "\n";
-		int toal_Utiliz = 0;
 		for (int i = 0; i < numofprocessors; i++) {
 			Processor* p = listofprocessors->DeQueue();
 			myfile << "P" << p->getprocessorid() << " : " << 100 * (p->getbusytime() / (p->getbusytime() + p->getidealtime())) << "   ";
-			toal_Utiliz = toal_Utiliz + 100 * (p->getbusytime() / (p->getbusytime() + p->getidealtime()));
+
 		}
-		myfile << "average UTILIZ = " << (toal_Utiliz / c) * 100 << "\n";
 		myfile.close();
 	}
 
