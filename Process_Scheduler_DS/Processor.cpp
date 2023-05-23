@@ -31,6 +31,10 @@ int Processor::getprocessorid()
 	return 0;
 }
 
+int Processor::getprocessorid()
+{
+	return 0;
+}
 
 //int Processor::getidealtime()
 //{

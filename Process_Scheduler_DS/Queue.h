@@ -73,7 +73,7 @@ public:
 					prev->setNext(currnet->getNext());
 					delete currnet;
 					currnet = prev;
-					
+
 				}
 				return true;
 			}
@@ -156,8 +156,8 @@ public:
 		}
 		//cout << endl;
 	}
-	
-	
+
+
 	T FRONT() {
 		if (IsEmpty())
 		{
@@ -182,7 +182,7 @@ public:
 	int Size() { // new function to return number of elements in queue
 		return Counter;
 	}
-	template<typename T>
+
 	int count()
 	{
 		int c = 0;

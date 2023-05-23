@@ -186,19 +186,12 @@ public:
 
     Queue<Process*> TRM;
 
-    Processor** processorsList;
-    FCFSProcessor** FCFSList;
-    RRProcessor** RRList;
-    SJFProcessor** SJFList;
+
+    FCFSProcessor* FCFSptr;
+    int numofprocesses;
+
     int mode;
     int clock;
-    int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
-
-// =======
-//     FCFSProcessor* FCFSptr;
-//     int numofprocesses;
-//     int mode;
-//     int clock;
     int forkprop=10;
 
     bool checkfork() 
@@ -214,6 +207,7 @@ public:
 
            }
         }
+
 
     }
     Processor* getprocessorid(int id) {
@@ -245,11 +239,23 @@ public:
 
         }
     }
+// <<<<<<< ghaith7
+// =======
+// // =======
+// //     Processor** processorsList;
+// //     int mode;
+// //     int clock;
+// //     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
+
+// // >>>>>>> dev
+// >>>>>>> dev
 
     Scheduler() {
         clock = 0;
         mode = 1;
+
         readProcessesFromFile("/Users/mohamedghaith/Documents/DS-Process-Scheduler/input.txt");
+
     }
 
     void readProcessesFromFile(const string& filename) {
@@ -259,9 +265,18 @@ public:
             return;
         }
 
+// <<<<<<< ghaith7
 
+// =======
+// // <<<<<<< op
+//         int numProcesses;
+//         inputFile >> numProcesses;
+//         numofprocesses = numProcesses;
+// // =======
+// >>>>>>> dev
         inputFile >> FCFS_COUNT >> SJF_COUNT >> RR_COUNT >> RR_SLICE >> Fork_Prop >> numProcesses;
         processorsList = new Processor * [FCFS_COUNT + SJF_COUNT + RR_COUNT];
+// >>>>>>> dev
 
         for (int i = 0; i < FCFS_COUNT; i++) {
             processorsList[i] = new FCFSProcessor();
