@@ -34,9 +34,14 @@ private:
     
 public:
     int KillTime;
-=
+
+
+    
+    Process(){}
+
     int currentprocessorid;
     Process (int pid, int arrivalTime, int KillTime, int numIoOps, int* ioTimes, int* ioDurations);
+
 
 	~Process();
     // getters and setters for data members
@@ -52,8 +57,12 @@ public:
     void setchild(Process* p);
     Process* getchild();
     void Execute();
+    int getRemainingTime() const;
+    void setRemainingTime(int time);
+    int getTimeLeft() const;
     bool ExecuteIO();
     bool ifneedIO();
+
     Process* next; // pointer to the next process in the ready queue
     bool allIoOpsCompleted() const;// function to check if process has completed all IO operations
     int getremaintime();

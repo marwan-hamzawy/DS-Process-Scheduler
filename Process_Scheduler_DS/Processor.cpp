@@ -26,6 +26,10 @@ Process* Processor :: getRun() const
 	return (Process*)foo->getCPUtime();*/
 }
 
+int Processor::getprocessorid()
+{
+	return 0;
+}
 
 int Processor::getprocessorid()
 {

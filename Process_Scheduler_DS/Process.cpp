@@ -64,6 +64,7 @@ bool Process::allIoOpsCompleted() const
     return ioIndex >= NIO;
 }
 
+
 int Process::getremaintime()
 {
     return timeRemaining;
@@ -101,6 +102,7 @@ int Process::getCT()
     return CT;
 }
 
+
 int Process::getCPUtime() const {
     return CT;
 }
@@ -120,7 +122,28 @@ bool Process::ExecuteIO() {
     }
            
 }
-
+int Process::getRemainingTime() const
+{
+    // Calculate the remaining time by subtracting the completed time from the total CPU time
+    int completedTime = CT - getTimeLeft();
+    int remainingTime = CT - completedTime;
+    return remainingTime;
+}
+int Process::getTimeLeft() const
+{
+    // Calculate the time left by subtracting the completed time from the total CPU time
+    int completedTime = 0;
+    for (int i = 0; i < ioIndex; i++)
+    {
+        completedTime += ioDurations[i];
+    }
+    int timeLeft = CT - completedTime;
+    return timeLeft;
+}
+void Process::setRemainingTime(int time)
+{
+    CT = time;
+}
 void Process::Execute() {
     CT--;                       //we here reduce the cputime with one
     runtime++;
