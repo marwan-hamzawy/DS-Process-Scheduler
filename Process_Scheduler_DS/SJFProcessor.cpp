@@ -26,12 +26,16 @@ void SJFProcessor::setbusytime(int busy)
 void SJFProcessor::AddToRDY(Process* p)
 {
 	RDY.enqueue(p,p->KillTime);
+	p->setporcessorid(id);
 }
 
 void SJFProcessor::RemoveProcess(Process* p)
 {
 	RDY.dequeue();
 }
+
+
+
 
 int SJFProcessor ::UpdateRandomNum(Process*& p){
 	return 0;

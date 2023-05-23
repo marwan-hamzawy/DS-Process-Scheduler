@@ -47,9 +47,58 @@ int Process::getIoDuration(int index) const
     return ioDurations[index];
 }
 
+void Process::setchild(Process* p)
+{
+    child = p;
+}
+
+Process* Process::getchild()
+{
+    return child;
+}
+
+
+
 bool Process::allIoOpsCompleted() const
 {
     return ioIndex >= NIO;
+}
+
+int Process::getremaintime()
+{
+    return timeRemaining;
+}
+void Process::setporcessorid(int id)
+{
+    currentprocessorid = id;
+}
+int Process::getprocessorid()
+{
+    return currentprocessorid;
+}
+int Process::getwaitingtime()
+{
+    return waitingtime;
+}
+int Process::getterminationtime()
+{
+    return  terminationtime;
+}
+void Process::setterminationtime(int tm)
+{
+    terminationtime = tm;
+}
+int Process::getturnroundtime()
+{
+    return turnedroundtime;
+}
+void Process::setturnroundtime()
+{
+    turnedroundtime = terminationtime - AT;
+}
+int Process::getCT()
+{
+    return CT;
 }
 
 int Process::getCPUtime() const {
@@ -83,6 +132,7 @@ bool Process::ifneedIO() {
     else
         return false;
 }
+
 
  ostream& operator << (ostream& COUT, Process* p) {
      COUT << p->getPid() << "    ";

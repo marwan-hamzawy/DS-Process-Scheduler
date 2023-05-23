@@ -176,21 +176,78 @@
 using namespace std;
 
 class Scheduler {
+
+    
 public:
     Queue<Process*> BLK;
     Queue<Process*> NEW;
 
     Queue<Process*> TRM;
-    Processor** processorsList;
+
+    FCFSProcessor* FCFSptr;
+    int numofprocesses;
     int mode;
     int clock;
-    int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
+    int forkprop=10;
 
+    bool checkfork() 
+    {
+        Process* p;
+        for (int i = 0; i < 5; i++)
+        {
+            
+           bool x= FCFSptr[i].forkrequired(p,forkprop,clock,numofprocesses);
+           if (x) {
+               numofprocesses++;
+               FCFSptr[i].AddToRDY(p);
+
+           }
+        }
+
+    }
+    Processor* getprocessorid(int id) {
+        for (int i = 0; i < 5; i++)
+        {
+
+            if (FCFSptr[i].getprocessorid() == id)
+            {
+                return &FCFSptr[i];
+            }
+        }
+    }
+    void killorph(Process* p)
+    {
+        
+        if(p->getchild())
+        {
+            killorph(p->getchild());
+            
+        }
+        int processorid = p->getprocessorid();
+        Processor* pr = getprocessorid(processorid);
+        if (dynamic_cast<FCFSProcessor*> (pr)) //check type of processor
+        {
+            FCFSProcessor* fc = dynamic_cast<FCFSProcessor*> (pr);
+
+            fc->RemoveProcess2(p);
+            TRM.EnQueue(p);
+
+        }
+    }
+// =======
+//     Processor** processorsList;
+//     int mode;
+//     int clock;
+//     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
+
+// >>>>>>> dev
 
     Scheduler() {
         clock = 0;
         mode = 1;
-        readProcessesFromFile("F:/CIE SPRG 2023/Alaa's Ph2 CODE/DS-Process-Scheduler/input.txt");
+
+        readProcessesFromFile("/Users/mohamedghaith/Documents/DS-Process-Scheduler/input.txt");
+
     }
 
     void readProcessesFromFile(const string& filename) {
@@ -200,8 +257,14 @@ public:
             return;
         }
 
+// <<<<<<< op
+        int numProcesses;
+        inputFile >> numProcesses;
+        numofprocesses = numProcesses;
+// =======
         inputFile >> FCFS_COUNT >> SJF_COUNT >> RR_COUNT >> RR_SLICE >> Fork_Prop >> numProcesses;
         processorsList = new Processor * [FCFS_COUNT + SJF_COUNT + RR_COUNT];
+// >>>>>>> dev
 
         for (int i = 0; i < FCFS_COUNT; i++) {
             processorsList[i] = new FCFSProcessor();

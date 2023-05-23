@@ -4,6 +4,7 @@ Processor::Processor(int numProcesses) : numProcesses(numProcesses)
 {
 	busytime = 0;
 	idealtime = 0;
+	
 }
 
 void Processor::tick()
@@ -26,6 +27,10 @@ Process* Processor :: getRun() const
 }
 
 
+int Processor::getprocessorid()
+{
+	return 0;
+}
 
 //int Processor::getidealtime()
 //{

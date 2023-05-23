@@ -12,11 +12,18 @@ FCFSProcessor::FCFSProcessor() :Processor(5) {
 void FCFSProcessor::AddToRDY(Process* p)
 {
 	RDY.EnQueue(p);
+	p->setporcessorid(id);
 }
 
 void FCFSProcessor::RemoveProcess(Process* p)
 {
 	RDY.DeQueue();
+}
+
+void FCFSProcessor::RemoveProcess2(Process* p)
+{
+	RDY.removeitem(p);
+	
 }
 
 
@@ -123,5 +130,32 @@ void FCFSProcessor::ScheduleAlgo(Process* p)
 void FCFSProcessor::PrintProcessor() {
 	RDY.Display();
  
+}
+
+bool FCFSProcessor::forkrequired(Process*& p,int fk,int at,int num)
+{
+	if (Run) {
+		srand(time(0)); // Use current time as the seed
+
+		// Generate a random number from 0 to 100
+		int randomNumber = rand() % 101;
+		if (randomNumber < fk) 
+		{
+			int cpu = Run->getremaintime();
+			Process* fp = new Process(num + 1, at, 0, 0, nullptr, nullptr);
+			p = fp;
+			Run->setchild(fp);
+			return true;
+
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
 }
 
