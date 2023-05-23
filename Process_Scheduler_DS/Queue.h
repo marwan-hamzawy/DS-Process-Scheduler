@@ -182,6 +182,7 @@ public:
 	int Size() { // new function to return number of elements in queue
 		return Counter;
 	}
+
 	int count()
 	{
 		int c = 0;

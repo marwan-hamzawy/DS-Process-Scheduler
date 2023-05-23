@@ -169,6 +169,8 @@
 #pragma once
 #include "Processor.h"
 #include "FCFSProcessor.h"
+#include "RRProcessor.h"
+#include "SJFProcessor.h"
 #include "Process.h"
 #include <iostream>
 #include <fstream>
@@ -184,8 +186,10 @@ public:
 
     Queue<Process*> TRM;
 
+
     FCFSProcessor* FCFSptr;
     int numofprocesses;
+
     int mode;
     int clock;
     int forkprop=10;
@@ -203,6 +207,7 @@ public:
 
            }
         }
+
 
     }
     Processor* getprocessorid(int id) {
@@ -234,12 +239,15 @@ public:
 
         }
     }
+// <<<<<<< ghaith7
 // =======
-//     Processor** processorsList;
-//     int mode;
-//     int clock;
-//     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
+// // =======
+// //     Processor** processorsList;
+// //     int mode;
+// //     int clock;
+// //     int FCFS_COUNT, SJF_COUNT, RR_COUNT, RR_SLICE, Fork_Prop, numProcesses;
 
+// // >>>>>>> dev
 // >>>>>>> dev
 
     Scheduler() {
@@ -257,11 +265,15 @@ public:
             return;
         }
 
-// <<<<<<< op
-        int numProcesses;
-        inputFile >> numProcesses;
-        numofprocesses = numProcesses;
+// <<<<<<< ghaith7
+
 // =======
+// // <<<<<<< op
+//         int numProcesses;
+//         inputFile >> numProcesses;
+//         numofprocesses = numProcesses;
+// // =======
+// >>>>>>> dev
         inputFile >> FCFS_COUNT >> SJF_COUNT >> RR_COUNT >> RR_SLICE >> Fork_Prop >> numProcesses;
         processorsList = new Processor * [FCFS_COUNT + SJF_COUNT + RR_COUNT];
 // >>>>>>> dev
@@ -269,6 +281,12 @@ public:
         for (int i = 0; i < FCFS_COUNT; i++) {
             processorsList[i] = new FCFSProcessor();
         }
+//        for (int i = 0; i < RR_COUNT; i++) {
+//            RRList[i] = new RRProcessor(RR_SLICE);
+//        }
+//        for (int i = 0; i < SJF_COUNT; i++) {
+//            SJFList[i] = new SJFProcessor();
+//        }
         
         
         for (int i = 0; i < numProcesses; i++) {
@@ -361,7 +379,7 @@ public:
             for (int i = 0; i < FCFS_COUNT + SJF_COUNT + RR_COUNT; i++) {
 
                 int x = processorsList[i]->UpdateRandomNum(PSESSptr);
-
+                processorsList[i]->ScheduleAlgo(PSESSptr);
                 if (PSESSptr) {
                     if (x == 2) {
                         BLK.EnQueue(PSESSptr);
@@ -372,6 +390,7 @@ public:
                 }
                 PSESSptr = nullptr;
             }
+
             printprocess(); // move printprocess() here
             UpdateIO();
         }

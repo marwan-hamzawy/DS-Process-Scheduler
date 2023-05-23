@@ -21,8 +21,12 @@ public:
 	 void setbusytime(int busy) override;
 	 int UpdateRandomNum(Process*& p) override;
 	 void PrintProcessor() override;
+
 	 bool forkrequired(Process*& p,int fk,int at,int num);
 	 int ShortSizeFCFS();
+
+	 bool forkrequired(Process*& p,int fk,int at,int num);
+
 
 };
 
