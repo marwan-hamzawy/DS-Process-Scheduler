@@ -48,7 +48,6 @@ public:
         return item;
     }
 
-
     const T& frontValue() const {
         return arr[front];
     }

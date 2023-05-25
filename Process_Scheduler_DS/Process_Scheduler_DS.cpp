@@ -1,6 +1,4 @@
 #include<iostream>
-#include"PriorityQueue.h"
-#include"CircularQueue.h"
 #include"UI.h"
 
 using namespace std;
